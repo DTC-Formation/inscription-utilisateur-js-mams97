@@ -16,14 +16,27 @@ inputAge.addEventListener('change', function(){
 })
 
 inputMdp.addEventListener('change', function(){
-    mdp = inputMdp.value.length
+    let mdp = inputMdp.value.length
     console.log(mdp)
     let text = document.getElementById('mdpTexte')
-    if (mdp <= 8){
+    if (mdp <= 8) {
         text.classList.add('text-danger')
         text.textContent = "mot de passe trop court, essayer avec 8 caractère"
     } else {
         text.classList.add('text-success')
         text.textContent = "accepter"
+    }
+})
+
+inputMdp2.addEventListener('change', function(){
+    let mdp = inputMdp.value.length
+    let mdp2 = inputMdp2.value.length
+    let text = document.getElementById('mdp2Texte')
+    if (mdp === mdp2) {
+        text.classList.add('text-success')
+        text.textContent = "mot de passe confirmer"
+    } else {
+        text.classList.add('text-danger')
+        text.textContent = "mot de passe réfuser"
     }
 })
