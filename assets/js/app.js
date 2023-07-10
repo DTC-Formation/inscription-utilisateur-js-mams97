@@ -47,4 +47,3 @@ inputMdp2.addEventListener('change', function(){
         btn.disabled = false
     }
 })
-
