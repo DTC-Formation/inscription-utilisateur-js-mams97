@@ -1,6 +1,7 @@
 let inputNom = document.getElementById('nom')
 let inputPrenom = document.getElementById('prenom')
 let inputMail = document.getElementById('mail')
+let selectSex = document.getElementById('sex')
 let inputAge = document.getElementById("age")
 let inputMdp = document.getElementById("mdp")
 let inputMdp2 = document.getElementById("mdp2")
@@ -11,6 +12,10 @@ btn.addEventListener('click', function(){
     let nom = inputNom.value
     let prenom = inputPrenom.value
     let mail = inputMail.value
+    let sex = selectSex.value
+    let age = parseInt(inputAge.value)
+    let mdp = inputMdp.value
+    let div = document.getElementById('liste')
     
     let text = document.getElementsByClassName('Texte')
     console.log(text)
@@ -22,11 +27,9 @@ btn.addEventListener('click', function(){
         }
         
     } else {
-        for (let i = 0; i < text.length; i++) {
-            const element = text[i]
-            element.classList.add('text-success')
-            element.textContent = "accepter"
-        }
+        let par = '<p>' + nom + prenom + sex + mail + age +'ans' + mdp + '</p>'
+        console.log(par)
+        div.innerHTML = par
     }
 })
 
